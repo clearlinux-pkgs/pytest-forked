@@ -1,5 +1,5 @@
 PKG_NAME := pytest-forked
-URL = https://files.pythonhosted.org/packages/30/be/cb5dc4f0fa5ba121943305f4f235dc1a30fae53daac20094ab89f4618578/pytest-forked-1.0.2.tar.gz
+URL = https://files.pythonhosted.org/packages/ae/9c/8f0c51c98ee5165ff575f196662a4a314ff07c9d3de64a94580c982edcee/pytest-forked-1.1.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
