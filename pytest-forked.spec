@@ -4,7 +4,7 @@
 #
 Name     : pytest-forked
 Version  : 1.1.3
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/43/b4/d0efa1748880e24aaaf8343825138ed5460b8e260e84ac73ef4415e1d1d4/pytest-forked-1.1.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/43/b4/d0efa1748880e24aaaf8343825138ed5460b8e260e84ac73ef4415e1d1d4/pytest-forked-1.1.3.tar.gz
 Summary  : run tests in isolated forked subprocesses
@@ -24,67 +24,7 @@ BuildRequires : util-linux
 BuildRequires : virtualenv
 
 %description
-pytest-forked: run each test in a forked subprocess
 ====================================================
-
-
-.. warning::
-
-	this is a extraction of the xdist --forked module,
-	future maintenance beyond the bare minimum is not planned until a new maintainer is found.
-
-
-This plugin **does not work on Windows** because there's no ``fork`` support.
-
-
-* ``--forked``: run each test in a forked
-  subprocess to survive ``SEGFAULTS`` or otherwise dying processes.
-
-
-Installation
------------------------
-
-Install the plugin with::
-
-    pip install pytest-forked
-
-or use the package in develope/in-place mode with
-a checkout of the `pytest-forked repository`_ ::
-
-   pip install -e .
-
-
-Usage examples
----------------------
-
-If you have tests involving C or C++ libraries you might have to deal
-with tests crashing the process.  For this case you may use the boxing
-options::
-
-    pytest --forked
-
-which will run each test in a subprocess and will report if a test
-crashed the process.  You can also combine this option with
-running multiple processes via pytest-xdist to speed up the test run
-and use your CPU cores::
-
-    pytest -n3 --forked
-
-this would run 3 testing subprocesses in parallel which each
-create new forked subprocesses for each test.
-
-
-You can also fork for individual tests::
-
-    @pytest.mark.forked
-    def test_with_leaky_state():
-        run_some_monkey_patches()
-
-
-This test will be unconditionally boxed, regardless of CLI flag.
-
-
-.. _`pytest-forked repository`: https://github.com/pytest-dev/pytest-forked
 
 %package license
 Summary: license components for the pytest-forked package.
@@ -107,7 +47,8 @@ python components for the pytest-forked package.
 Summary: python3 components for the pytest-forked package.
 Group: Default
 Requires: python3-core
-Provides: pypi(pytest-forked)
+Provides: pypi(pytest_forked)
+Requires: pypi(pytest)
 
 %description python3
 python3 components for the pytest-forked package.
@@ -122,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583210344
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583529645
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
