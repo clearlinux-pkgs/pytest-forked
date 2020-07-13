@@ -4,7 +4,7 @@
 #
 Name     : pytest-forked
 Version  : 1.2.0
-Release  : 13
+Release  : 14
 URL      : https://files.pythonhosted.org/packages/29/25/d90af7cea876d104c6dc72400179894bc278c0e6aa81929aff054eb690d2/pytest-forked-1.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/29/25/d90af7cea876d104c6dc72400179894bc278c0e6aa81929aff054eb690d2/pytest-forked-1.2.0.tar.gz
 Summary  : run tests in isolated forked subprocesses
